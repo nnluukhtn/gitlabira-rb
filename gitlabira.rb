@@ -23,6 +23,7 @@ class Gitlabira < Sinatra::Base
     logger = Logger.new(STDOUT)
     logger.level = Logger::DEBUG if development?
     set :logger, logger
+    set :bind, '0.0.0.0'
   end
 
   def jira_authentication_header
